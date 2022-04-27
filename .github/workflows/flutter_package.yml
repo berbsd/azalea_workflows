@@ -62,7 +62,7 @@ jobs:
           very_good packages get --recursive
 
       - name: ✨ Check Formatting
-        run: flutter format --set-exit-if-changed --line-length ${{fmt_line_length}} lib test
+        run: flutter format --set-exit-if-changed --line-length ${{inputs.fmt_line_length}} lib test
 
       - name: 🕵️ Analyze
         run: flutter analyze lib test
