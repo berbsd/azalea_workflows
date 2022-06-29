@@ -34,7 +34,7 @@ on:
       fmt_line_length:
         required: false
         type: number
-        default: 120
+        default: 80
 
 jobs:
   build:
@@ -61,8 +61,8 @@ jobs:
           very_good --analytics false
           very_good packages get --recursive
 
-      # - name: ✨ Check Formatting
-      #   run: flutter format --set-exit-if-changed --line-length ${{inputs.fmt_line_length}} lib test
+      - name: ✨ Check Formatting
+        run: flutter format --set-exit-if-changed --line-length ${{inputs.fmt_line_length}} lib test
 
       - name: 🕵️ Analyze
         run: flutter analyze lib test
